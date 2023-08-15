@@ -21,17 +21,17 @@
     
     //Teste geração INSERT
     $instrucao = insert ($entidade, $dados);
-    echo $instrucao . "<BR>";
+    echo $instrucao . "<br>";
 
     //Teste geração UPDATE
     $instrucao = update($entidade, $dados, $criterio);
-    echo $instrucao.'<BR>';
+    echo $instrucao.'<br>';
 
     //Teste geração SELECT 
     $instrucao = select($entidade, $campos, $criterio);
-    echo $instrucao.'<BR>';
+    echo $instrucao.'<br>';
 
     //Teste geração DELETE
     $instrucao = delete($entidade, $criterio);
-    echo $instrucao.'<BR>';
+    echo $instrucao.'<br>';
 ?>
