@@ -25,15 +25,14 @@
             <div class="col-md-10" style="padding-top: 50px;">
                 <h2>Pagina teste includes</h2>
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
                 <div class="col-md-12">
                     <?php
                     include 'includes/rodape.php';
                     ?>
                 </div>
             </div>
-
-        </div>
         <script src="lib/js/bootstrap.min.js"></script>
 </body>
 
