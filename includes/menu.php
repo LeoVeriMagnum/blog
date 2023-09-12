@@ -16,10 +16,10 @@
             <li class="nav-item">
                 <a href="post_formulario.php" class="nav-link">Incluir Post</a>
             </li>
-            <?php if ((isset($_SESSION['login']))
+            <?php if ((isset($_SESSION['login'])) //se retirar o &&, pode-se adicionar opções só para quem está logado;
                 && ($_SESSION['login']['usuario']['adm'] === 1)
             ) : ?>
-
+                <!-- ops de admin -->
                 <li class="nav-item">
                     <a href="usuarios.php" class="nav-link">Usuários</a>
                 </li>

@@ -21,13 +21,14 @@
                 include 'includes/menu.php';
                 ?>
             </div>
-            <div class="col-md-10" style="padding-top: 50px;">
+            <div class="col-md-12" style="padding-top: 50px;">
                 <h2>Página Inicial</h2>
                 <?php
                 include 'includes/busca.php';
                 ?>
 
                 <?php
+                date_default_timezone_set('America/Sao_Paulo');
                 require_once 'includes/funcoes.php';
                 require_once 'core/conexao_mysql.php';
                 require_once 'core/sql.php';
