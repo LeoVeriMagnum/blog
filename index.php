@@ -13,6 +13,7 @@
                 <?php
                 include 'includes/topo.php';
                 ?>
+                <!-- Topo -->
             </div>
         </div>
         <div class="row" style="min-height: 500px;">
@@ -20,12 +21,14 @@
                 <?php
                 include 'includes/menu.php';
                 ?>
+                <!-- Menu -->
             </div>
             <div class="col-md-12" style="padding-top: 50px;">
                 <h2>Página Inicial</h2>
                 <?php
                 include 'includes/busca.php';
                 ?>
+                <!-- Busca -->
 
                 <?php
                 date_default_timezone_set('America/Sao_Paulo');
@@ -39,6 +42,10 @@
                 }
 
                 $data_atual = date('Y-m-d H:i:s');
+                // é a forma mais fácil de ordenar uma data, pois em caso de ordenação, 
+                // o ano é o primeiro parametro a ser verificado, assim, ano>mes>dia 
+
+                // busca o horário do servidor
 
                 $criterio = [
                     ['data_postagem', '<=', $data_atual]
@@ -49,7 +56,9 @@
                         'AND',
                         'titulo',
                         'like',
+                        // like é para buscar em qualquer parte do post.
                         "%{$busca}%"
+                        // refere-se ao campo de nome busca, para ver se ele está preenchido
                     ];
                 }
 

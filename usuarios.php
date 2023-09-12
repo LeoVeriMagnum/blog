@@ -19,7 +19,7 @@
                 ?>
             </div>
         </div>
-    </div>
+    
     <div class="row" style="min-height: 500px;">
         <div class="col-md-12">
             <?php include 'includes/menu.php'; ?>
@@ -94,6 +94,7 @@
             include 'includes/rodape.php';
             ?>
         </div>
+    </div>
     </div>
     </div>
     <script src="lib/js/bootstrap.min.js"></script>

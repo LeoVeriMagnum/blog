@@ -124,4 +124,5 @@ switch($acao){
 
 }
 header ('Location: ../index.php');
+// quando não tiver, padrão index
 ?>

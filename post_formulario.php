@@ -13,6 +13,7 @@
                 <?php
                 include 'includes/topo.php';
                 include 'includes/valida_login.php' ?>
+                <!-- verifica se o usuário está logado -->
             </div>
 
         </div>
