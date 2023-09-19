@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="lib/css/bootstrap.min.css">
 </head>
 
-<body>
+<body >
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -89,6 +89,14 @@
                                 [<?php echo $post['nome'] ?>]
                                 <span class="badge badge-dark"><?php echo $data ?></span>
                             </a>
+
+                            <?php if ((isset($_SESSION['login'])) //se retirar o &&, pode-se adicionar opções só para quem está logado;
+                                && ($_SESSION['login']['usuario']['adm'] === 1)
+                            ) : ?>
+                                <!-- ops de admin -->
+                                <a href="core/post_repositorio.php?acao=delete&id=<?php echo $post['id'] ?>" class="bg-danger text-white text-center"> Deletar</a>
+                            <?php endif; ?>
+
                         <?php endforeach; ?>
                     </div>
                 </div>

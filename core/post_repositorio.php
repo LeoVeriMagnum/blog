@@ -11,7 +11,7 @@ foreach ($_POST as $indice => $dado) {
 }
 
 foreach ($_GET as $indice => $dado) {
-    $$indice = limparDados($dados);
+    $$indice = limparDados($dado);
 }
 
 $id = (int)$id;

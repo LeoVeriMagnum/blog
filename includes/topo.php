@@ -8,7 +8,7 @@ session_start();
     </div>
 
     <?php if (isset($_SESSION['login'])) : ?>
-        <div class="card-body text-right">
+        <div class="card-body text-right bg-dark text-white">
             Olá <?php echo $_SESSION['login']['usuario']['nome'] ?>!
             <a href="core/usuario_repositorio.php?acao=logout" class="text-danger">Sair</a>
 

@@ -32,7 +32,7 @@ function update(string $entidade, array $dados, array $criterio = []): string
 
 function delete(string $entidade, array $criterio = []): String
 {
-    $instrucao = "DELETE {$entidade}";
+    $instrucao = "DELETE FROM {$entidade}";
 
     if (!empty($criterio)) {
         $instrucao .= ' WHERE ';
