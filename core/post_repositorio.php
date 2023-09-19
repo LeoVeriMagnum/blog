@@ -6,33 +6,22 @@ require_once 'conexao_mysql.php';
 require_once 'sql.php';
 require_once 'mysql.php';
 
-foreach($_POST as $indice => $dado) {
+foreach ($_POST as $indice => $dado) {
     $$indice = limparDados($dado);
 }
 
-foreach($_GET as $indice => $dado) {
+foreach ($_GET as $indice => $dado) {
     $$indice = limparDados($dados);
 }
 
 $id = (int)$id;
 
-switch($acao){
+switch ($acao) {
     case 'insert':
-        $dados =[
-            'titulo' => $titulo,
-            'texto' => $texto,
-            'data_postagem' => "$data_postagem $hora_postagem",
-            'usuario_id' => $_SESSION['login']['usuario']['id']
-        ];
+        $trimmed = trim($texto);
 
-        insere(
-            'post',
-            $dados
-        );
-
-        break;
-
-        case 'update':
+        if (empty($trimmed)) {
+        } else {
             $dados = [
                 'titulo' => $titulo,
                 'texto' => $texto,
@@ -40,30 +29,44 @@ switch($acao){
                 'usuario_id' => $_SESSION['login']['usuario']['id']
             ];
 
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza(
+            insere(
                 'post',
-                $dados,
-                $criterio
+                $dados
             );
+        }
+        break;
 
-            break;
+    case 'update':
+        $dados = [
+            'titulo' => $titulo,
+            'texto' => $texto,
+            'data_postagem' => "$data_postagem $hora_postagem",
+            'usuario_id' => $_SESSION['login']['usuario']['id']
+        ];
 
-            case 'delete':
-                $criterio = [
-                    ['id', '=', $id]
-                ];
+        $criterio = [
+            ['id', '=', $id]
+        ];
 
-                deleta(
-                    'post',
-                    $criterio
-                );
+        atualiza(
+            'post',
+            $dados,
+            $criterio
+        );
 
-                break;
+        break;
+
+    case 'delete':
+        $criterio = [
+            ['id', '=', $id]
+        ];
+
+        deleta(
+            'post',
+            $criterio
+        );
+
+        break;
 }
 
 header('Location: ../index.php');
-?>

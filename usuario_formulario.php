@@ -16,7 +16,7 @@
             <div class="col-md-12">
                 <?php include 'includes/menu.php'; ?>
             </div>
-            <div class="col-md-10" style="padding-top: 50px;">
+            <div class="col-md-12" style="padding-top: 50px;">
                 <?php
                 require_once 'includes/funcoes.php';
                 require_once 'core/conexao_mysql.php';
@@ -50,16 +50,16 @@
                     <!-- Como uma ?, se a primeira condição for verdadeira, executa a primeira. Caso falso, executa a segunda -->
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" class="form-control" require="required" value="<?php echo $entidade['nome'] ?? '' ?>">
+                        <input type="text" name="nome" id="nome" class="form-control" required value="<?php echo $entidade['nome'] ?? '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email" class="form-control" require="required" value="<?php echo $entidade['email'] ?? '' ?>">
+                        <input type="text" name="email" id="email" class="form-control" required value="<?php echo $entidade['email'] ?? '' ?>">
                     </div>
                     <?php if (!isset($_SESSION['login'])) : ?>
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input type="password" name="senha" id="senha" class="form-control" require="required">
+                            <input type="password" name="senha" id="senha" class="form-control" required>
                         </div>
                     <?php endif; ?>
                     <div class="text-right">

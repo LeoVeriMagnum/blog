@@ -5,7 +5,7 @@ use blog;
 CREATE TABLE usuario (
     id int NOT NULL  AUTO_INCREMENT,
     nome varchar(50) NOT NULL,
-    email varchar(255) NOT NULL,
+    email varchar(255) UNIQUE NOT NULL,
     senha varchar(60) NOT NULL,
     data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ativo tinyint NOT NULL DEFAULT '0',
@@ -36,6 +36,12 @@ CREATE TABLE AVALIACAO (
     CONSTRAINT fk_avaliacao_usuario FOREIGN KEY (usuario_id) REFERENCES usuario (id),
     CONSTRAINT fk_avaliacao_post FOREIGN KEY (post_id) REFERENCES post (id)
 );
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `data_criacao`, `ativo`, `adm`) 
+VALUES (NULL, 'ADM_VERAS', 'leo@gmail.com', 'AB1Gdy0FbsN2g', current_timestamp(), '1', '1');
+
+-- UPDATE `usuario` SET `ativo` = '1', `adm` = '1' WHERE `usuario`.`id` = 1;
+
+
 
 -- select * from usuario;
 -- select * from avaliacao;
